@@ -15,40 +15,12 @@ For each 3D model, 12 images are provided from different viewpoints. The data in
 <img src='./misc/demo_data.png' width=800>
 
 ## Requirements
+In he original fork was used Tensorflow 1x. However doenst worked in 2x version. Now is the update to run in Tensorflow 2x version
 * [TensorFlow](https://www.tensorflow.org/)
 
 ## ShapeNet Subdataset
 ### Train
-The model is trained per category, change the category id when working on different categories.
-
-|    Category   |      Id       | 
-| ------------- | ------------- | 
-| Car           | 02958343      |
-| Table         | 04379243      |
-| Guitar        | 03467517      |
-| Chair         | 03001627      |
-
-
-* Run shape training script for car category:
-``` bash
-python train_shape.py --cat_id 02958343
-```
-
-* Run color training script for car category:
-``` bash
-python train_color.py --cat_id 02958343
-```
-
-### Inference
-* To generate testing shape volumes for car category:
-``` bash
-python inference_shape.py --cat_id 02958343
-```
-
-* To generate testing color volumes for car category:
-``` bash
-python inference_color.py --cat_id 02958343
-```
+Only to human dataset
 
 ### Eval
 After generating all the shape and color volumes, evaluate surface PSNR and IoU.
@@ -67,23 +39,23 @@ python eval_iou.py
 ### Train
 * Run shape training script:
 ``` bash
-python train_shape_human.py
+python train_shape_humanV2.py
 ```
 
 * Run color training script:
 ``` bash
-python train_color_human.py
+python train_color_humanV2.py
 ```
 
 ### Inference
 * To generate testing shape volumes:
 ``` bash
-python inference_shape_human.py
+python inference_shape_humanv2.py
 ```
 
 * To generate testing color volumes:
 ``` bash
-python inference_color_human.py
+python inference_color_humanV2.py
 ```
 
 
